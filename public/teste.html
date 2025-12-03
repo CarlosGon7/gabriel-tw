@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../src/output.css">
+  <title>Diferença entre w-screen e w-lvw</title>
+
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+    .wrapper {
+      display: grid;
+      /* grid para criar colunas automaticamente ao adicionar itens (em vez de criar linhas) */
+      grid-auto-flow: column;
+      /* Define a largura de cada coluna automática como 16rem */
+      grid-auto-columns: clamp(100px, 250px, 350px);
+      justify-content: stretch;
+      animation: animate 20s linear infinite;
+      will-change: transform; /* 🔥 melhora a animação */
+    }
+
+
+    .bg {
+      background:  linear-gradient(0deg, rgba(0,25,38,1) 10%, rgba(2,26,34,0) 30%), url('../src/img/bg/background-hero.webp');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+    }
+
+    @keyframes animate {
+      to {
+        translate: calc(-6 * 16rem);
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+    <div class="bg"></div>
+
+
+  <div class="depoimentos wrapper">
+    <img src="../src/img/depoimentos/depoimentonew02.webp" alt="depoimento 02">
+    <img src="../src/img/depoimentos/depoimentonew03.webp" alt="depoimento 03">
+    <img src="../src/img/depoimentos/depoimentonew04.webp" alt="depoimento 04">
+    <img src="../src/img/depoimentos/depoimentonew05.webp" alt="depoimento 05">
+    <img src="../src/img/depoimentos/depoimentonew06.webp" alt="depoimento 06">
+    <img src="../src/img/depoimentos/depoimentonew07.webp" alt="depoimento 07">
+    <img src="../src/img/depoimentos/depoimentonew02.webp" alt="depoimento 02">
+    <img src="../src/img/depoimentos/depoimentonew03.webp" alt="depoimento 03">
+    <img src="../src/img/depoimentos/depoimentonew04.webp" alt="depoimento 04">
+    <img src="../src/img/depoimentos/depoimentonew05.webp" alt="depoimento 05">
+    <img src="../src/img/depoimentos/depoimentonew06.webp" alt="depoimento 06">
+    <img src="../src/img/depoimentos/depoimentonew07.webp" alt="depoimento 07">
+  </div>
+
+</body>
+
+</html>

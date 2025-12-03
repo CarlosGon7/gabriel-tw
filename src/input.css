@@ -1,0 +1,97 @@
+:root {
+
+    --font-poppins: "Poppins", sans-serif;
+
+    --gradiente-ouro: linear-gradient(90deg, #FF9500 0%, #FF9500 25%, #FFB348 50%, #FF9500 75%, #FF9500 100%);
+    --gradiente-azul: linear-gradient(90deg, #05A5BB 11%, #00E0FF 18%, #05A5BB 50%);
+    --grad-azul-claro: linear-gradient(45deg, #05A5BB 0%,#00E0FF 15%,#02C5DF 52%,#05A5BB 94%);
+    --gradiente-verde: linear-gradient(90deg, #06B11A 0%, #4CFC61 100%);
+    --grad-card-azul: linear-gradient(45deg, #052332 60%, #066779 100%);
+    --cor-texto: #001926;
+    --cor-titulo: #052332;
+    --azul-escuro: #05A5BB;
+    --azul-claro: #00E0FF;
+    --verde-claro: #47F75C;
+    --stroke-escuro: #403820;
+    --amarelo-claro: #FFB348; 
+    --total-itens: 12;
+    --item-width: clamp(16rem, 8vw, 20rem);
+    --depoimentoanimate: depanimate 40s linear infinite;
+  }
+
+/* 2 — Importa o Tailwind */
+@import "tailwindcss";
+
+/* 3 — Fontes externas */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* 4 — Fonte local (TTF dentro do seu projeto) */
+@font-face {
+  font-family: "Poppins";
+  src: url("../public/font/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 5 — Customizações do seu tema */
+@layer theme {
+    /* --color-*;
+    --color-gradiente-ouro: linear-gradient(90deg, #FF9500 0%, #FF9500 25%, #FFB348 50%, #FF9500 75%, #FF9500 100%);
+    --color-gradiente-azul: linear-gradient(90deg, #05A5BB 11%, #00E0FF 18%, #05A5BB 50%);
+    --color-gradiente-verde: linear-gradient(90deg, #06B11A 0%, #4CFC61 100%);
+    --color-azul-escuro: #05A5BB;
+    --color-azul-claro: #00E0FF;
+    --color-verde-claro: #47F75C;
+    --color-stroke-escuro: #403820;
+    --color-amarelo-claro: #FFB348; */
+}
+
+@layer components {
+  .div-section section {
+    max-width: 1280px;
+  }
+
+  .btn-laranja {
+    background: var(--gradiente-ouro);
+    border: solid 4px var(--stroke-escuro);
+    box-shadow: 0 0 21px 6px var(--amarelo-claro);
+    color: #5A3909;
+    font-weight: bold;
+    animation: pulsar 2s infinite;
+  }
+
+  .btn-verde {
+    background: var(--gradiente-verde);
+    border: solid 4px var(--azul-escuro);
+    box-shadow: 0 0 19px 6px var(--verde-claro);
+    color: #001926;
+    font-weight: bold;
+    animation: pulsar 2s infinite;
+  }
+}
+
+@layer utilities{
+
+    @keyframes pulsar {
+        70%{
+            box-shadow: 0 0 0 25px rgba(0, 0, 0, 0);
+        }
+
+        100%{
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        }
+    }
+
+    @keyframes depanimate {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        trabsform: translateX(calc(var(--total-itens) * var(--item-width) * -1));
+      }
+    }
+}
+
+body {
+    font-family: var(--font-poppins);
+}
